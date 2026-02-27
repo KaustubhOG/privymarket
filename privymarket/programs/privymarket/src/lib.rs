@@ -12,5 +12,4 @@ pub mod privymarket {
     }
 }
 
-#[derive(Accounts)]
-pub struct Initialize {}
+
