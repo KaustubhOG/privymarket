@@ -4,6 +4,12 @@ A privacy-focused prediction market built on Solana using Anchor. Users can part
 
 ---
 
+## Program ID Devnet Deployed
+
+```
+52pS2mBRo3g4Fk4hf83aFM1dNoG2EYGaKvaq9ruzPHex
+```
+
 ## Problem
 
 Existing prediction markets expose all user activity publicly. Anyone can see your position, your bet size, and your wallet. This enables front-running and strategy copying, which discourages serious participants from using these platforms.
@@ -193,8 +199,4 @@ anchor test
 
 ---
 
-## Program ID
 
-```
-5UAhemfaML4RSGQ6GvDYLBHBC4JdAAQ2qZWdQi7LXgdr
-```
