@@ -1,26 +1,17 @@
 use anchor_lang::prelude::*;
 
-#[derive(AnchorSerialize, AnchorDeserialize, Clone, PartialEq)]
-pub enum MarketStatus {
-    Open,
-    Resolved,
-}
-
 #[account]
-pub struct Market {
-    pub market_id: u64,
-    pub creator: Pubkey,
-    pub question: String,
-    pub deadline: i64,
-    pub status: MarketStatus,
-    pub outcome: Option<bool>,
-    pub total_pool: u64,
-    pub total_yes_pool: u64,
-    pub total_no_pool: u64,
+pub struct UserPosition {
+    pub user: Pubkey,
+    pub market: Pubkey,
+    // this is sha256(secret + position_byte), the actual YES/NO never hits the chain
+    pub commitment: [u8; 32],
+    pub amount: u64,
+    pub claimed: bool,
     pub created_at: i64,
     pub bump: u8,
 }
 
-impl Market {
-    pub const LEN: usize = 8 + 8 + 32 + (4 + 200) + 8 + 1 + 2 + 8 + 8 + 8 + 8 + 1;
+impl UserPosition {
+    pub const LEN: usize = 8 + 32 + 32 + 32 + 8 + 1 + 8 + 1;
 }
