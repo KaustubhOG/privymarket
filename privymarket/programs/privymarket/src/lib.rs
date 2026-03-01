@@ -6,10 +6,19 @@ declare_id!("5UAhemfaML4RSGQ6GvDYLBHBC4JdAAQ2qZWdQi7LXgdr");
 pub mod privymarket {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
+    pub fn initialize() -> Result<()> {
+        Ok(())
+    }
+    pub fn create_market() -> Result<()> {
+        Ok(())
+    }
+    pub fn place_bet() -> Result<()> {
+        Ok(())
+    }
+    pub fn resolve_market() -> Result<()> {
+        Ok(())
+    }
+    pub fn claim_winnings() -> Result<()> {
         Ok(())
     }
 }
-
-

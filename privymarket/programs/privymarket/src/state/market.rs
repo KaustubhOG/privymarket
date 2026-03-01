@@ -1,21 +1,26 @@
 use anchor_lang::prelude::*;
 
-MarketStatus enum {
+#[derive(AnchorSerialize, AnchorDeserialize, Clone, PartialEq)]
+pub enum MarketStatus {
     Open,
     Resolved,
 }
 
 #[account]
 pub struct Market {
-    market_id: u64,
-    creator: Pubkey,
-    question: String,
-    deadline: i64,
-    status: MarketStatus,
-    outcome: Option<bool>,
-    total_pool: u64,
-    total_yes_pool: u64,
-    total_no_pool: u64,
-    created_at: i64,
-    bump: u8,
+    pub market_id: u64,
+    pub creator: Pubkey,
+    pub question: String,
+    pub deadline: i64,
+    pub status: MarketStatus,
+    pub outcome: Option<bool>,
+    pub total_pool: u64,
+    pub total_yes_pool: u64,
+    pub total_no_pool: u64,
+    pub created_at: i64,
+    pub bump: u8,
+}
+
+impl Market {
+    pub const LEN: usize = 8 + 8 + 32 + (4 + 200) + 8 + 1 + 2 + 8 + 8 + 8 + 8 + 1;
 }
