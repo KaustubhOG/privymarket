@@ -9,7 +9,7 @@ pub use state::*;
 declare_id!("5UAhemfaML4RSGQ6GvDYLBHBC4JdAAQ2qZWdQi7LXgdr");
 
 #[program]
-pub mod privacy_market {
+pub mod privymarket {
     use super::*;
 
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
